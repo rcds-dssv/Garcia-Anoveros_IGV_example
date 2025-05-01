@@ -1,2 +1,2 @@
-# Garcia-Anoveros_IGV_example
-And example IGV website for the Gacia-Anoveros group data 
+# García-Añoveros IGV example
+And example IGV website for the García-Añoveros group data 
