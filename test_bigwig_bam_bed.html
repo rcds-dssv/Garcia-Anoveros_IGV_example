@@ -1,0 +1,100 @@
+<!-- many examples are available here : https://igv.org/web/release/3.2.6/examples/  -->
+<!DOCTYPE html>
+<html lang="en">
+
+    <body>
+
+        <h1>testing bigwig + bam + bed files</h1>
+
+        <div id="igvDiv" style="padding-top: 20px;padding-bottom: 20px; height: auto"></div>
+
+        <script type="module">
+
+            import igv from "https://cdn.jsdelivr.net/npm/igv@3.2.6/dist/igv.esm.min.js"
+
+            const options =
+                {
+                    genome: "mm39", 
+                    locus: "chr18:42,525,663-42,531,158",
+                    tracks: [
+                        {
+                            name: "IHC1_ATAC.bigWig",
+                            url : "https://igv-viewer.s3.us-east-2.amazonaws.com/ATAC-seq/IHC1_ATAC.bigWig",
+                            format: "bigwig",
+                            type: "wig",
+                            color: "blue",
+                            height: 50,
+                        },
+                        {
+                            name: "IHC2_ATAC.bigWig",
+                            url : "https://igv-viewer.s3.us-east-2.amazonaws.com/ATAC-seq/IHC2_ATAC.bigWig",
+                            format: "bigwig",
+                            type: "wig",
+                            color: "blue",
+                            height: 50,
+                        },
+                        {
+                            name: "OHC1_ATAC.bigWig",
+                            url : "https://igv-viewer.s3.us-east-2.amazonaws.com/ATAC-seq/OHC1_ATAC.bigWig",
+                            format: "bigwig",
+                            type: "wig",
+                            color: "blue",
+                            height: 50,
+                        },
+                        {
+                            name: "OHC2_ATAC.bigWig",
+                            url : "https://igv-viewer.s3.us-east-2.amazonaws.com/ATAC-seq/OHC2_ATAC.bigWig",
+                            format: "bigwig",
+                            type: "wig",
+                            color: "blue",
+                            height: 50,
+                        },
+                        {
+                            name: "IHC_RNA_merged.bam Coverage",
+                            type: "alignment",
+                            format: "bam",
+                            url: "https://igv-viewer.s3.us-east-2.amazonaws.com/RNA-seq/IHC_RNA_merged.bam",
+                            indexURL: "https://igv-viewer.s3.us-east-2.amazonaws.com/RNA-seq/IHC_RNA_merged.bam.bai",
+                            height: 50,
+                            colorBy: "fragmentLength",
+                            showMismatches: false,
+                            showAlignments: false
+                        },
+                        {
+                            name: "IHC_RNA_merged.bed Junction",
+                            type: "junction",
+                            format: "bed",
+                            height: 100,
+                            url: "https://igv-viewer.s3.us-east-2.amazonaws.com/IHC_RNA_merged_all_junctions_igv.bed",
+                        },
+                        {
+                            name: "OHC_RNA_merged.bam Coverage",
+                            type: "alignment",
+                            format: "bam",
+                            url: "https://igv-viewer.s3.us-east-2.amazonaws.com/RNA-seq/OHC_RNA_merged.bam",
+                            indexURL: "https://igv-viewer.s3.us-east-2.amazonaws.com/RNA-seq/OHC_RNA_merged.bam.bai",
+                            height: 500,
+                            colorBy: "fragmentLength",
+                            showMismatches: false,
+                            showAlignments: false
+                        },
+                        {
+                            name: "OHC_RNA_merged.bed Junction",
+                            type: "junction",
+                            format: "bed",
+                            height: 100,
+                            url: "https://igv-viewer.s3.us-east-2.amazonaws.com/OHC_RNA_merged_all_junctions_igv.bed",
+                        },
+
+                    ]
+                }
+
+            igv.createBrowser(document.getElementById("igvDiv"), options)
+
+
+
+        </script>
+
+    </body>
+
+</html>
