@@ -71,7 +71,8 @@
                             type: "junction",
                             format: "bed",
                             height: 100,
-                            url: "https://igv-viewer.s3.us-east-2.amazonaws.com/IHC_RNA_merged_all_junctions_igv.bed",
+                            url: "https://igv-viewer.s3.us-east-2.amazonaws.com/IHC_SJ.bed",
+                            colorBy: 'isAnnotatedJunction',
                         },
                         {
                             name: "OHC_RNA_merged.bam Coverage",
@@ -89,7 +90,8 @@
                             type: "junction",
                             format: "bed",
                             height: 100,
-                            url: "https://igv-viewer.s3.us-east-2.amazonaws.com/OHC_RNA_merged_all_junctions_igv.bed",
+                            url: "https://igv-viewer.s3.us-east-2.amazonaws.com/OHC_SJ.bed",
+                            colorBy: 'isAnnotatedJunction',
                         },
                         {
                             type: 'merged',
@@ -106,6 +108,7 @@
                                 format: 'bed',
                                 url: "https://igv-viewer.s3.us-east-2.amazonaws.com/OHC_SJ.bed",
                                 minUniquelyMappedReads: 1,
+                                colorBy: 'isAnnotatedJunction',
                             },
         ],
       }
