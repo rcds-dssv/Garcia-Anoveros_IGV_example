@@ -55,24 +55,43 @@
                             color: "blue",
                             height: 50,
                         },
+                        // {
+                        //     name: "IHC_RNA_merged.bam Coverage",
+                        //     type: "alignment",
+                        //     format: "bam",
+                        //     url: "https://igv-viewer.s3.us-east-2.amazonaws.com/RNA-seq/IHC_RNA_merged.bam",
+                        //     indexURL: "https://igv-viewer.s3.us-east-2.amazonaws.com/RNA-seq/IHC_RNA_merged.bam.bai",
+                        //     height: 50,
+                        //     colorBy: "fragmentLength",
+                        //     showMismatches: false,
+                        //     showAlignments: false
+                        // },
+                        // {
+                        //     name: "IHC_RNA_merged.bed Junction",
+                        //     type: "junction",
+                        //     format: "bed",
+                        //     height: 100,
+                        //     url: "https://igv-viewer.s3.us-east-2.amazonaws.com/IHC_SJ.bed",
+                        //     colorBy: 'isAnnotatedJunction',
+                        // },
                         {
-                            name: "IHC_RNA_merged.bam Coverage",
-                            type: "alignment",
-                            format: "bam",
-                            url: "https://igv-viewer.s3.us-east-2.amazonaws.com/RNA-seq/IHC_RNA_merged.bam",
-                            indexURL: "https://igv-viewer.s3.us-east-2.amazonaws.com/RNA-seq/IHC_RNA_merged.bam.bai",
-                            height: 50,
-                            colorBy: "fragmentLength",
-                            showMismatches: false,
-                            showAlignments: false
-                        },
-                        {
-                            name: "IHC_RNA_merged.bed Junction",
-                            type: "junction",
-                            format: "bed",
-                            height: 100,
-                            url: "https://igv-viewer.s3.us-east-2.amazonaws.com/IHC_SJ.bed",
-                            colorBy: 'isAnnotatedJunction',
+                            type: 'merged',
+                            name: 'IHC "sashimi-like"',
+                            height: 150,
+                            tracks: [
+                                {
+                                    type: 'wig',
+                                    format: "bigwig",
+                                    url: "https://igv-viewer.s3.us-east-2.amazonaws.com/RNA-seq/IHC_RNA_merged.bw",
+                                },
+                                {
+                                    type: 'spliceJunctions',
+                                    format: 'bed',
+                                    url: "https://igv-viewer.s3.us-east-2.amazonaws.com/IHC_SJ.bed",
+                                    minUniquelyMappedReads: 1,
+                                    colorBy: 'isAnnotatedJunction',
+                                },
+                            ]
                         },
                         //{
                         //    name: "OHC_RNA_merged.bam Coverage",
@@ -98,20 +117,20 @@
                             name: 'OHC "sashimi-like"',
                             height: 150,
                             tracks: [
-                            {
-                                type: 'wig',
-                                format: "bigwig",
-                                url: "https://igv-viewer.s3.us-east-2.amazonaws.com/ATAC-seq/OHC1_ATAC.bigWig",
-                            },
-                            {
-                                type: 'spliceJunctions',
-                                format: 'bed',
-                                url: "https://igv-viewer.s3.us-east-2.amazonaws.com/OHC_SJ.bed",
-                                minUniquelyMappedReads: 1,
-                                colorBy: 'isAnnotatedJunction',
-                            },
-        ],
-      }
+                                {
+                                    type: 'wig',
+                                    format: "bigwig",
+                                    url: "https://igv-viewer.s3.us-east-2.amazonaws.com/RNA-seq/OHC_RNA_merged.bw",
+                                },
+                                {
+                                    type: 'spliceJunctions',
+                                    format: 'bed',
+                                    url: "https://igv-viewer.s3.us-east-2.amazonaws.com/OHC_SJ.bed",
+                                    minUniquelyMappedReads: 1,
+                                    colorBy: 'isAnnotatedJunction',
+                                },
+                            ],
+                        }
 
                     ]
                 }
